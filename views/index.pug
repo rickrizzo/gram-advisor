@@ -7,6 +7,7 @@ html
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans', type='text/css')
     script(src='modules/jquery/dist/jquery.min.js')
     script(src='/javascripts/input.js')
+    script(src='/javascripts/results.js')
 //extends layout
 
 block content
@@ -23,20 +24,18 @@ block content
           div.form-group 
             input#Destination(type="text", name="destination", placeholder="Enter your destination")
             button#Submit Let's Go
-            //button#Submit(onclick= "getInput()") Let's Go
-            input#lat(placeholder="Lat")
-            input#lon(placeholder="Lon")
 
           div#Preset
             p Or take a look at our featured destinations!
             div.img-wrap
               img.option(src='/images/barcelona.jpg')
-              a.img-desc(href='results') Barcelona
+              a#B.img-desc(onclick= "getCoords(this)") Barcelona
     
             div.img-wrap
               img.option(src='/images/tokyo.jpg')
-              a.img-desc(href='results') Tokyo
+              a#T.img-desc(href='' onclick= "getCoords(this)") Tokyo
             
             div.img-wrap
               img.option(src='/images/charleston.jpg')
-              a.img-desc(href='results') Charleston
+              a#C.img-desc(href='' onclick= "getCoords(this)") Charleston
+
