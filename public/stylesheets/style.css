@@ -1,8 +1,31 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html,body {
+  font-family: 'Open Sans', sans-serif;
+  height:100%;
+  margin:0;
 }
 
-a {
-  color: #00B7FF;
+/*
+.col-sm-6 {
+	display:block;
+	background-image:url(https://static.fanpage.it/wp-content/uploads/sites/19/2017/02/instgram-travel.jpg);
+}
+*/
+
+.left {
+    /* The image used */
+    background-image: url(https://static.fanpage.it/wp-content/uploads/sites/19/2017/02/instgram-travel.jpg);
+    /*background-image: url(../images/left.jpg);*/
+
+    /* Full height */
+    width: 50%;
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.right {
+	position: relative;
 }
