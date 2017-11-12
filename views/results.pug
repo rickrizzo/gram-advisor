@@ -5,7 +5,7 @@ block content
     h3 Top Results
     each location in data
       div(class='col-md-3 col-sm-4 col-xs-6')
-        img(src= location.photo_url class='results')
+        img(src= location.photo_url class='results' alt='Attraction Image')
         p(data-toggle='modal' data-target='#modal'+location.id) #{location.name}
       div(id='modal' + location.id class="modal fade" role="dialog")
         div(class='modal-dialog' role='document')
