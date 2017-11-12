@@ -3,3 +3,9 @@ $.get('http://localhost:3000/api/', function(data) {
     console.log(location.name);
   });
 });
+
+$(document).ready(function(){
+    $("#detailsbtn").click(function(){
+        $("#myModal").modal();
+    });
+});
