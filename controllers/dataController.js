@@ -25,10 +25,10 @@ module.exports = {
       },
       function(instagram, callback) {
         async.each(instagram, function(location, callback) {
-          request(tripAdvisor + instagram[0].latitude + ',' + instagram[0].longitude + '?key=' + tripAdvisorApiKey, function(err, response, body) {
+          request(tripAdvisor + location.latitude + ',' + location.longitude + '?key=' + tripAdvisorApiKey, function(err, response, body) {
             body = JSON.parse(body).data[0];
             location.name = body.name;
-            location.address = body.address;
+            location.address = body.address_obj;
             location.percent_recommended = body.percent_recommended;
             location.rating = body.rating;
             location.rating_image = body.rating_imag_url;
@@ -40,58 +40,33 @@ module.exports = {
             location.price = body.price_level;
             location.num_reviews = body.num_reviews;
             location.category = body.category;
-            //   callback(null, {
-            //     'name': location.name,
-            //     'address': location.address_obj,
-            //     'percent_recommended': location.percent_recommended,
-            //     'rating': location.rating,
-            //     'rating_image': location.rating_image_url,
-            //     'cuisine': location.cuisine,
-            //     'location': location.location_string,
-            //     'latitude': location.latitude,
-            //     'longitude': location.longitude,
-            //     'url': location.web_url,
-            //     'price': location.price_level,
-            //     'num_reviews': location.num_reviews,
-            //     'category': location.category
-            // });
+            callback();
+          });
 
-          });
-          // callback();
         }, function(err) {
-          console.log('it is the last callback');
           callback(null, instagram);
-        });
-        request(tripAdvisor + instagram[0].latitude + ',' + instagram[0].longitude + '?key=' + tripAdvisorApiKey, function(err, response, body) {
-          location = JSON.parse(body).data[0];
-          callback(null, {
-            'name': location.name,
-            'address': location.address_obj,
-            'percent_recommended': location.percent_recommended,
-            'rating': location.rating,
-            'rating_image': location.rating_image_url,
-            'cuisine': location.cuisine,
-            'location': location.location_string,
-            'latitude': location.latitude,
-            'longitude': location.longitude,
-            'url': location.web_url,
-            'price': location.price_level,
-            'num_reviews': location.num_reviews,
-            'category': location.category
-          });
         });
       },
       function(tripAdvisor, callback) {
-        request(flickr + '&text=' + tripAdvisor.name + '&lat=' + tripAdvisor.latitude + '&lon=' + tripAdvisor.longitude + flickrApiKey, function(err, response, body) {
-          photos = /id="(.*)" owner/.exec(body);
-          tripAdvisor.photo_id = photos[1];
+        async.each(tripAdvisor, function(location, callback) {
+          request(flickr + '&text=' + location.name + '&lat=' + location.latitude + '&lon=' + location.longitude + flickrApiKey, function(err, response, body) {
+            photos = /id="(.*)" owner/.exec(body);
+            if(photos == null) { photos = [0, 5098548284]; }
+            location.photo_id = photos[1];
+            callback();
+          });
+        }, function(err) {
           callback(null, tripAdvisor);
         });
       },
       function(flickr, callback) {
-        request(flickrSize + flickr.photo_id + flickrApiKey, function(err, response, body) {
-          photo_url = /<size label="Medium .* source="(.*)" url=".*" media="photo" \/>/.exec(body);
-          flickr.photo_url = photo_url[1]
+        async.each(flickr, function(location, callback) {
+          request(flickrSize + location.photo_id + flickrApiKey, function(err, response, body) {
+            photo_url = /<size label="Medium .* source="(.*)" url=".*" media="photo" \/>/.exec(body);
+            location.photo_url = photo_url[1]
+            callback();
+          });
+        }, function(err) {
           callback(null, flickr);
         });
       }
