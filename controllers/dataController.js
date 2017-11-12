@@ -61,7 +61,9 @@ module.exports = {
         async.each(flickr, function(location, callback) {
           request(flickrSize + location.photo_id + flickrApiKey, function(err, response, body) {
             photo_url = /<size label="Medium .* source="(.*)" url=".*" media="photo" \/>/.exec(body);
-            location.photo_url = photo_url[1]
+            if(photo_url) {
+             location.photo_url = photo_url[1]
+            }
             callback();
           });
         }, function(err) {

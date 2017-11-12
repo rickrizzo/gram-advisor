@@ -18,7 +18,10 @@ block content
               img(src= location.photo_url)
               p Rating: #{location.rating}
               p Reviews: #{location.num_reviews}
-              p Price: #{location.price}
+              if(location.category)
+                p Category: #{location.category.name}
+              if(location.price)
+                p Price: #{location.price}
             div(class='modal-footer')
               button(type='button' class='btn btn-default' data-dismiss='modal') Close
               a(class='btn btn-primary' href=location.url) Check It Out
