@@ -14,7 +14,7 @@ router.get('/getLocationDetails', function(req, res, next) {
 });
 
 router.get('/', function(req, res, next) {
-  dataCtrl.getLocationsFull(req, res, next);
+  dataCtrl.getLocationData(req, res, next);
 });
 
 module.exports = router;

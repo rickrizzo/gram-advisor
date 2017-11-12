@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "async": "^2.6.0",
     "body-parser": "~1.17.1",
     "bootstrap": "^3.3.7",
     "city-to-coords": "^1.1.0",
