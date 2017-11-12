@@ -106,7 +106,7 @@ button {
 	font-size: 200%;
 }
 
-a:link {
+a#B, #C, #T {
 	text-decoration: none;
 	color: white;
 }
@@ -121,7 +121,6 @@ a:visited {
 	opacity: 1;
 }
 
-
 h1 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 48px;
@@ -129,7 +128,8 @@ h1 {
 
 h2 {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 36px;
+	text-align: center;
+	font-size: 30px;
 }
 
 h3 {
