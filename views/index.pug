@@ -6,20 +6,33 @@ block content
       //h1 Welcome
         //p We uncover the most picturesque places on Earth to enhance vacation
 
-  div.left
-  div.right
-    h1 Welcome
-      p We uncover the most picturesque places on Earth to enhance vacation
+  div
+    div#left.col-sm-6
+    div.container
+      div.col-sm-6
+        div#Welcome.col-sm-12
+          img(src="/images/logo.png" width=60 height=60)
+          img(src="/images/textlogo.png" width=200 height=50)
+          //img(src="/images/textlogo.png" width=200 height=100)
+          h1#Welcome Welcome
+          p We uncover the most picturesque places on Earth to enhance vacation.
+          div.form-group 
+            input#Destination(type="text", name="destination", placeholder="Enter your destination")
+            button#Submit Let's go
+          div#Preset
+            p Or take a look at our featured destinations!
+            div.img-wrap
+              img.option(src='/images/barcelona.jpg')
+              p.img-desc Barcelona
+    
+            div.img-wrap
+              img.option(src='/images/tokyo.jpg')
+              p.img-desc Tokyo
+            
+            div.img-wrap
+              img.option(src='/images/charleston.jpg')
+              p.img-desc Charleston
+              
 
-  //div.media
-    //div.media-left
-      //img.media-object(src="/images/left.jpg")
-    //div.media-body
-      //h4.media-heading John Doe
-      //p Lorem Ipsum
 
-  //div.container-fluid
-    //h1 Basic Grid Structure
-      //p Resize browser window
-        //div.row
-          //div.col-sm-6
+  
