@@ -2,20 +2,16 @@ function getCoords(e) {
 	if (e.id == 'B'){
 		var lat = 41.403;
 		var lon = 2.173;
-		//console.log(lat,lon);
 		window.location.href = '/results?lat='+lat+'&lon='+lon;
-		//window.location.href = '/'+lat+'&'+lon;
-		//window.location.href = "http://www.gorissen.info/Pierre/maps/googleMapLocation.php?lat="+lat+"&lon="+lon+"&setLatLon=Set";
 	} else if (e.id == 'T'){
 		var lat = 35.685;
 		var lon = 139.753;
-		console.log(lat,lon);
+		window.location.href = '/results?lat='+lat+'&lon='+lon;
 	} else {
 		var lat = 32.78;
 		var lon = -79.94;
-		console.log(lat,lon);
+		window.location.href = '/results?lat='+lat+'&lon='+lon;
 	}
-	return lat, lon;
 }
 
 /*
@@ -50,7 +46,7 @@ $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=Charleston'
 		$("#lat").val(location.lat)
 		$("#lon").val(location.lng)
     }
-})
+});
 
 $("#Destination").on("change keyup", function() {
   var city = $(this).val()
@@ -63,4 +59,3 @@ $("#Destination").on("change keyup", function() {
     }
 })
 */
-

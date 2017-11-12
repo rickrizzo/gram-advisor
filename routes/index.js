@@ -12,7 +12,7 @@ router.get('/analyzer', function(req, res, next) {
 });
 
 router.get('/results', function(req, res, next) {
-  request('http://localhost:3000/api', function(err, response, body) {
+  request('http://localhost:3000/api' + '?lat=' + req.query.lat + '&lon=' + req.query.lon, function(err, response, body) {
     res.render('results', { title: 'Gram Advisor', data: JSON.parse(body) })
   });
 });
