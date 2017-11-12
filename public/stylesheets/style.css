@@ -142,13 +142,14 @@ h2 {
 
 h3 {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 30px;
+	font-size: 26px;
 	text-align: center;
 }
 
 h4 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
+	font-weight: bold;
 }
 
 h5 {
@@ -170,4 +171,12 @@ p {
 .btn-primary {
 	background-color: #00AF87;
 	border-color: #00AF87;
+}
+
+.headers{
+	color: #00AF87;
+}
+
+.checked {
+	color: #00AF87;
 }
