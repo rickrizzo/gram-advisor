@@ -1,12 +1,13 @@
 extends layout
 
 block content
+  script(type='text/javascript' src='Scripts/onclick.js')
   h4 Pick the pictures you can envision being a part of your vacation
   div(id='surveyblock')
     div(class='col-md-4')
-      img(src='/media/water-hands-up.png ' id='surveypics')
+      img(src='/media/handsupwater.png ' id='surveypics' onClick='selected(1)')
     div(class='col-md-4')
-      img(src='/media/mountainspic.jpg ' id='surveypics')
+      img(src='/media/mountainspic.png ' id='surveypics' onClick='selected(2)')
     div(class='col-md-4')
-      img(src='/media/rooftop.jpg ' id='surveypics')
-      
+      img(src='/media/rooftop.png ' id='surveypics' onClick='selected(3)')
+
