@@ -23,7 +23,7 @@ block content
           p We uncover the most picturesque places on Earth to enhance vacation.
           div.form-group 
             input#Destination(type="text", name="destination", placeholder="Enter your destination")
-            button#Submit Let's Go
+            button(id= 'Submit' onclick="getCoords(this)") Let's Go
 
           div#Preset
             p Or take a look at our featured destinations!
