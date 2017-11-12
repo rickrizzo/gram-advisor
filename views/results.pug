@@ -16,6 +16,8 @@ block content
               h4(class='modal-title' id='myModalLabel') #{location.name}
             div(class='modal-body')
               img#ModalImg(src= location.photo_url)
+              p #{location.address.street1}
+              p #{location.address.city}, #{location.address.state}
               p Rating: #{location.rating}
               p Reviews: #{location.num_reviews}
               if(location.category)
