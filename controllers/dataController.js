@@ -13,36 +13,34 @@ var flickrSize = 'https://api.flickr.com/services/rest/?method=flickr.photos.get
 var flickrApiKey = '&api_key=56ac69e62e299eee5d8e615fcd8de386';
 
 module.exports = {
-  getFullData: async function () {
-    let instagramList = await fetch('/')
-  },
   getLocationData: function(req, res, next) {
     async.waterfall([
       function(callback) {
-        request(instagram + 'lat=48.858844&lng=2.294351&access_token=' + instagramApiKey + '&count=50', function(err, response, body) {
+        request(instagram + 'lat=48.858844&lng=2.294351&access_token=' + instagramApiKey + '&count=25', function(err, response, body) {
           callback(null, JSON.parse(body).data);
         });
       },
       function(instagram, callback) {
         async.each(instagram, function(location, callback) {
           request(tripAdvisor + location.latitude + ',' + location.longitude + '?key=' + tripAdvisorApiKey, function(err, response, body) {
-            body = JSON.parse(body).data[0];
-            location.name = body.name;
-            location.address = body.address_obj;
-            location.percent_recommended = body.percent_recommended;
-            location.rating = body.rating;
-            location.rating_image = body.rating_imag_url;
-            location.cuisine = body.cuisine;
-            location.location = body.location_string;
-            location.latitude = body.latitude;
-            location.longitude = body.longitude;
-            location.url = body.web_url;
-            location.price = body.price_level;
-            location.num_reviews = body.num_reviews;
-            location.category = body.category;
+            if (JSON.parse(body).data) {
+              body = JSON.parse(body).data[0];
+              location.name = body.name;
+              location.address = body.address_obj;
+              location.percent_recommended = body.percent_recommended;
+              location.rating = body.rating;
+              location.rating_image = body.rating_imag_url;
+              location.cuisine = body.cuisine;
+              location.location = body.location_string;
+              location.latitude = body.latitude;
+              location.longitude = body.longitude;
+              location.url = body.web_url;
+              location.price = body.price_level;
+              location.num_reviews = body.num_reviews;
+              location.category = body.category;
+            }
             callback();
           });
-
         }, function(err) {
           callback(null, instagram);
         });
