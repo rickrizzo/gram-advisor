@@ -1,11 +1,10 @@
 extends layout
 
 block content
-  h2 Top Results
   div(class='container')
+    h3 Top Results
     each location in data
-      div(class='col-md-3')
-        img(src= location.photo_url class='results img-responsive')
-        p #{location.name}
-        //div(id='myModal' class="modal fade" role="dialog")
-          //div(class='modal-dialog')
+      div(class='col-md-3 img-wrap')
+        p.img-desc #{location.name}
+        div(id='myModal' class="modal fade" role="dialog")
+          div(class='modal-dialog')
