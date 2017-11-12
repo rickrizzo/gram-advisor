@@ -4,9 +4,8 @@ body {
 }
 
 .results {
-  object-fit: cover;
-  width:230px;
-  height:230px;
+  width:auto;
+  height:auto;
 }
 
 .surveypics {
