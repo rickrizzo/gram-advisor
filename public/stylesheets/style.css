@@ -4,15 +4,15 @@ body {
 
 }
 
-#surveypics {
+.surveypics {
 	width: 345px;
 	height: 345px;
 }
 
-.surveypics:hover img {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+.surveypics:hover {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 #logo {
