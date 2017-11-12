@@ -3,6 +3,13 @@ body {
 
 }
 
+.btn-success {
+  background-color: #00af87;
+}
+.btn-success:hover {
+  background-color: #007c60;
+}
+
 .results {
   object-fit: cover;
   width:230px;
