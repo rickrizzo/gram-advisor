@@ -39,10 +39,11 @@ body {
 }
 
 #left {
-
     background-image:url('/images/left4.jpg');
     background-position: center;
+    background-repeat: no-repeat;
     height: -webkit-fill-available;
+    background-size: conver;
 }
 
 #Welcome {
