@@ -15,12 +15,15 @@ module.exports = {
     });
   },
   getLocationsFull: function(req, res, next) {
-    request(instagram + 'lat=42.7284&lng=-73.6918&access_token=' + instagramApiKey, function(err, response, body) {
+    request(instagram + 'lat=40.7128&lng=-74.0060&access_token=' + instagramApiKey, function(err, response, body) {
       var stored = 0
       var locations = [];
       JSON.parse(body).data.forEach(function(elm, index, array) {
         request(tripAdvisor + elm.latitude + ',' + elm.longitude + '?key=' + tripAdvisorApiKey, function(err, response, body) {
           location = JSON.parse(body).data[0];
+          request(instagramLoc + elm.id + '/media/recent?access_token=' + instagramApiKey, function(err, response, body) {
+            console.log(JSON.parse(body).data);
+          });
           if(location.percent_recommended > 70) {
             locations.push({
               'name': location.name,
