@@ -4,20 +4,18 @@ body {
 
 }
 
-#p1 {
-	background-image: url('http://static5.businessinsider.com/image/55b94f1bdd0895307e8b45fc/forget-wedding-plans--pinterests-massive-wander-women-trend-is-all-about-traveling-solo.jpg');
-	background-position: center;
+#surveypics {
+	width: 345px;
 	height: 345px;
 }
 
-#p2 {
-	background-color: blue;
-	height: 345px;
+#logo {
+	width: 246px;
+	height: 57px;
 }
 
-#p3 {
-	background-color: yellow;
-	height: 345px;
+#surveyblock {
+	padding-top: 20px;
 }
 
 a {
