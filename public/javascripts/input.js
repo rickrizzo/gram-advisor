@@ -3,7 +3,7 @@ function getCoords(e) {
 		var lat = 41.403;
 		var lon = 2.173;
 		window.location.href = '/results?lat='+lat+'&lon='+lon;
-	} else if (e.id == 'T'){
+	} else if (e.id == 'T' || e.id == 'Submit'){
 		var lat = 42.728;
 		var lon = -73.691;
 		window.location.href = '/results?lat='+lat+'&lon='+lon;
