@@ -1,4 +1,13 @@
-extends layout
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/modules/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans', type='text/css')
+    script(src='modules/jquery/dist/jquery.min.js')
+    script(src='/javascripts/input.js')
+//extends layout
 
 block content
   div
@@ -6,24 +15,28 @@ block content
     div.container
       div.col-sm-6
         div#Welcome.col-sm-12
-          img(src="/images/logo.png" width=60 height=60)
+          //img(src="/images/logo.png" width=60 height=60)
           img(src="/images/textlogo.png" width=200 height=50)
           //img(src="/images/textlogo.png" width=200 height=100)
           h1#Welcome Welcome
           p We uncover the most picturesque places on Earth to enhance vacation.
           div.form-group 
             input#Destination(type="text", name="destination", placeholder="Enter your destination")
-            button#Submit Let's go
+            button#Submit Let's Go
+            //button#Submit(onclick= "getInput()") Let's Go
+            input#lat(placeholder="Lat")
+            input#lon(placeholder="Lon")
+
           div#Preset
             p Or take a look at our featured destinations!
             div.img-wrap
               img.option(src='/images/barcelona.jpg')
-              p.img-desc Barcelona
+              a.img-desc(href='results') Barcelona
     
             div.img-wrap
               img.option(src='/images/tokyo.jpg')
-              p.img-desc Tokyo
+              a.img-desc(href='results') Tokyo
             
             div.img-wrap
               img.option(src='/images/charleston.jpg')
-              p.img-desc Charleston
+              a.img-desc(href='results') Charleston

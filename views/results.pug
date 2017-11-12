@@ -1,35 +1,8 @@
 extends layout
 
 block content
-  h3 Food
-  div(id='results')
-    div(class='col-md-4')
-    div(class='col-md-4')
-    div(class='col-md-4')
-
-  <!-- Button to Open the Modal -->
-  button(type='button' id="detailsbtn" class='btn btn-primary' data-toggle='modal' data-target='#myModal') Details
-  <!-- The Modal -->
-  div(class='modal fade' id='myModal')
-  div(class='modal-dialog modal-sm')
-    div(class='modal-content')
-      <!-- Modal Header -->
-      div(class='modal-header')
-        h4(class='modal-title') Details
-        button(type='button' class='close' data-dismiss='modal') &times;
-      <!-- Modal body -->
-      div(class='modal-body')
-      <!-- Modal footer -->
-      div(class='modal-footer')
-        button(type='button' class='btn btn-secondary' data-dismiss='modal') Close
-  h3 Fun
-  div(id='results')
-    div(class='col-md-4')
-    div(class='col-md-4')
-    div(class='col-md-4')
-  h3 Fauna
-  div(id='results')
-    div(class='col-md-4')
-    div(class='col-md-4')
-    div(class='col-md-4')
+  //h2 Food
+  //h2 Fun
+  //h2 Fauna
+  pre#json
   script(src='/javascripts/results.js')
