@@ -5,15 +5,8 @@ block content
     h3 Top Results
     each location in data
       div(class='col-md-3 col-sm-4 col-xs-6')
-        img(src= location.photo_url class='results img-responsive')
-        p(class='title' data-toggle='modal' data-target='#modal'+location.id) #{location.name}
-          ul(class='hidden')
-            li(class='img_url') #{location.photo_url}
-            li(class='rating') #{location.rating}
-            li(class='recommend') #{location.percent_recommended}
-            li(class='num_reviews') #{location.num_reviews}
-            li(class='price') #{location.price}
-            li(class='url') #{location.url}
+        img(src= location.photo_url class='results')
+        p(data-toggle='modal' data-target='#modal'+location.id) #{location.name}
       div(id='modal' + location.id class="modal fade" role="dialog")
         div(class='modal-dialog' role='document')
           div(class='modal-content')
