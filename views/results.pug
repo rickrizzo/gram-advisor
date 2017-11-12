@@ -4,6 +4,13 @@ block content
   div(class='container')
     h3 Top Results
     each location in data
+<<<<<<< HEAD
       div(class='img-wrap')
-        img.option(src= location.photo_url width=150 height=150 class='results')
+        img.option(src= location.photo_url class='results')
         p.img-desc #{location.name}
+=======
+      div(class='col-md-3 img-wrap')
+        p.img-desc #{location.name}
+        div(id='myModal' class="modal fade" role="dialog")
+          div(class='modal-dialog')
+>>>>>>> 1aab94ace47b8382144db99c784458f3defb1f1e
