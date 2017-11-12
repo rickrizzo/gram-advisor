@@ -16,12 +16,12 @@ block content
               h4(class='modal-title' id='myModalLabel') #{location.name}
             div(class='modal-body')
               img#ModalImg(src= location.photo_url)
-              p Rating: #{location.rating}
-              p Reviews: #{location.num_reviews}
+              h4 Rating: #{location.rating}
+              h4 Reviews: #{location.num_reviews}
               if(location.category)
-                p Category: #{location.category.name}
+                h4 Category: #{location.category.name}
               if(location.price)
-                p Price: #{location.price}
+                h4 Price: #{location.price}
             div(class='modal-footer')
               button(type='button' class='btn btn-default' data-dismiss='modal') Close
               a(class='btn btn-success' href=location.url) View on Trip Advisor
