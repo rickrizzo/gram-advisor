@@ -46,7 +46,7 @@ $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=Charleston'
 		$("#lat").val(location.lat)
 		$("#lon").val(location.lng)
     }
-})
+});
 
 $("#Destination").on("change keyup", function() {
   var city = $(this).val()
@@ -59,4 +59,3 @@ $("#Destination").on("change keyup", function() {
     }
 })
 */
-
