@@ -180,3 +180,7 @@ p {
 .checked {
 	color: #00AF87;
 }
+
+#LocationName {
+	cursor: pointer;
+}
