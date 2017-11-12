@@ -16,7 +16,7 @@ module.exports = {
   getLocationData: function(req, res, next) {
     async.waterfall([
       function(callback) {
-        request(instagram + 'lat=48.858844&lng=2.294351&access_token=' + instagramApiKey + '&count=25', function(err, response, body) {
+        request(instagram + 'lat=' + req.query.lat + '&lng=' + req.query.lon + '&access_token=' + instagramApiKey + '&count=25', function(err, response, body) {
           callback(null, JSON.parse(body).data);
         });
       },
