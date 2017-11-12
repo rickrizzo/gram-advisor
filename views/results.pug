@@ -15,7 +15,7 @@ block content
                 span(aria-hidden='true') &times;
               h4(class='modal-title' id='myModalLabel') #{location.name}
             div(class='modal-body')
-              img(src= location.photo_url)
+              img#ModalImg(src= location.photo_url)
               p Rating: #{location.rating}
               p Reviews: #{location.num_reviews}
               if(location.category)

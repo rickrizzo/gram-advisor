@@ -160,3 +160,14 @@ p {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 }
+
+#ModalImg {
+	display: inline-block;
+	margin: auto;
+	width: 100%;
+}
+
+.btn-primary {
+	background-color: #00AF87;
+	border-color: #00AF87;
+}
