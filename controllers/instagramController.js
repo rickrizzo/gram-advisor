@@ -6,7 +6,7 @@ module.exports = {
   getTopLocations: function(req, res, next) {
     ig.location_search({ lat: 42.7284, lng: -73.6918 }, function(err, result, remaining, limit) {
       if(err) { console.log(err); }
-      res.json(JSON.parse(result));
+      res.json(result);
     });
   }
 }
