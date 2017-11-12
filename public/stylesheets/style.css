@@ -3,6 +3,12 @@ body {
 
 }
 
+.results {
+  object-fit: cover;
+  width:230px;
+  height:230px;
+}
+
 .surveypics {
 	width: 345px;
 	height: 345px;
@@ -26,7 +32,7 @@ body {
 }
 
 #left {
-    
+
     background-image:url('/images/left4.jpg');
     background-position: center;
     height: -webkit-fill-available;
@@ -59,7 +65,7 @@ button {
 	color: white;
 }
 
-#Submit { 
+#Submit {
 	background-color: #00AF87;
 	border: none;
 	box-shadow: 0px 3px 5px #D3D3D3;
@@ -123,18 +129,18 @@ h1 {
 
 h2 {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 36px;	
+	font-size: 36px;
 }
 
 h3 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 30px;
-	text-decoration: underline;	
+	text-decoration: underline;
 }
 
 h4 {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 24px;	
+	font-size: 24px;
 }
 
 h5 {
