@@ -15,10 +15,10 @@ block content
                 span(aria-hidden='true') &times;
               h4(class='modal-title' id='myModalLabel') #{location.name}
             div(class='modal-body')
-              img(src= location.photo_url)
-              p Rating: #{location.rating}
-              p Reviews: #{location.num_reviews}
-              p Price: #{location.price}
+              img#ModalImg(src= location.photo_url)
+              h3 Rating: #{location.rating}
+              h3 Reviews: #{location.num_reviews}
+              h3 Price: #{location.price}
             div(class='modal-footer')
               button(type='button' class='btn btn-default' data-dismiss='modal') Close
               a(class='btn btn-primary' href=location.url) Check It Out
