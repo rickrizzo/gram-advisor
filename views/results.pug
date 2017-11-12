@@ -4,8 +4,29 @@ block content
   h2 Top Results
   div(class='container')
     each location in data
-      div(class='col-md-3')
+      div(class='col-md-3 col-sm-4 col-xs-6')
         img(src= location.photo_url class='results img-responsive')
-        p #{location.name}
-        div(id='myModal' class="modal fade" role="dialog")
-          div(class='modal-dialog')
+        p(class='title' data-toggle='modal' data-target='#modal'+location.id) #{location.name}
+          ul(class='hidden')
+            li(class='img_url') #{location.photo_url}
+            li(class='rating') #{location.rating}
+            li(class='recommend') #{location.percent_recommended}
+            li(class='num_reviews') #{location.num_reviews}
+            li(class='price') #{location.price}
+            li(class='url') #{location.url}
+      div(id='modal' + location.id class="modal fade" role="dialog")
+        div(class='modal-dialog' role='document')
+          div(class='modal-content')
+            div(class='modal-header')
+              button(type='button' class='close' data-dismiss='modal' aria-label='close')
+                span(aria-hidden='true') &times;
+              h4(class='modal-title' id='myModalLabel') #{location.name}
+            div(class='modal-body')
+              img(src= location.photo_url)
+              p Rating: #{location.rating}
+              p Reviews: #{location.num_reviews}
+              p Price: #{location.price}
+            div(class='modal-footer')
+              button(type='button' class='btn btn-default' data-dismiss='modal') Close
+              a(class='btn btn-primary' href=location.url) Check It Out
+  script(src='/javascripts/results.js')
